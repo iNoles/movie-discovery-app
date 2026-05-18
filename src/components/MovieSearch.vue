@@ -1,19 +1,23 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
+import { useDebounceFn } from "@vueuse/core";
 
 export default defineComponent({
-  emits: ["search"], // Emit a "search" event
-  data() {
-    return {
-      query: "",
-    };
+  name: "MovieSearch",
+
+  emits: {
+    search: (query: string) => typeof query === "string",
   },
-  methods: {
-    onSearch() {
-      if (this.query.length > 2) {
-        this.$emit("search", this.query); // Emit the search event with the query
-      }
-    },
+
+  setup(_, { emit }) {
+    const query = ref("");
+
+    const debouncedSearch = useDebounceFn(() => {
+      const value = query.value.trim();
+      if (value.length > 2) emit("search", value);
+    }, 300);
+
+    return { query, debouncedSearch };
   },
 });
 </script>
@@ -22,8 +26,9 @@ export default defineComponent({
   <div class="flex justify-center p-4">
     <input
       v-model="query"
-      @input="onSearch"
+      @input="debouncedSearch"
       placeholder="Search movies..."
+      aria-label="Search movies"
       class="w-full max-w-md p-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
     />
   </div>
