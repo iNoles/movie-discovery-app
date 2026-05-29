@@ -1,5 +1,6 @@
 <script lang="ts">
-import type { defineComponent, PropType, ref } from "vue";
+import { defineComponent, ref } from "vue";
+import type { PropType } from "vue";
 import type { Movie, MovieDetails } from "../types";
 
 export default defineComponent({
