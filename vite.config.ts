@@ -4,6 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/MovieExplorer/",
+  base: "/movie-discovery-app/",
   plugins: [vue(), tailwindcss()],
 });
