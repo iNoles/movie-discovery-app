@@ -1,6 +1,7 @@
-# MovieExplorer
+# Movie Discovery App
 
-MovieExplorer is a web application built with Vue.js, TypeScript, and Tailwind CSS that allows users to search for movies and view detailed information about them. It integrates with a movie API to fetch movie data and display it in an easy-to-use interface.
+A responsive web application for discovering movies, built with Vue.js, TypeScript, and Tailwind CSS.
+It allows users to search, explore trending titles, and view detailed movie information powered by a movie data API.
 
 ## Features
 
@@ -27,22 +28,22 @@ To run this project locally, follow the instructions below:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/iNoles/MovieExplorer.git
-cd MovieExplorer
+git clone https://github.com/iNoles/movie-discovery-app.git
+cd movie-discovery-app
 ```
 
 ### 2. Install Dependencies
 
-Make sure you have bun installed. Then, run:
+Make sure you have node installed. Then, run:
 ```bash
-bun install
+pnpm install
 ```
 
 ### 3. Run the Development Server
 
 To start the development server and see the application in action:
 ```bash
-bun run dev
+pnpm run dev
 ```
 
 Visit `http://localhost:3000` in your browser.
