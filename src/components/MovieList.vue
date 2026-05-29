@@ -1,5 +1,6 @@
 <script lang="ts">
-import type { defineComponent, PropType } from "vue";
+import { defineComponent } from "vue";
+import type { PropType } from "vue";
 import type { Movie, MovieDetails } from "../types";
 import MovieCard from "./MovieCard.vue";
 
