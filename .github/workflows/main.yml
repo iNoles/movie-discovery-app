@@ -35,9 +35,6 @@ jobs:
         with:
           version: 11
 
-      - name: Disable pnpm release age
-        run: pnpm config set package-release-age 0
-
       - name: Install dependencies
         run: pnpm install
 
